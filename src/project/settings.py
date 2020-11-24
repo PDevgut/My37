@@ -11,21 +11,32 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from dynaconf import settings as _ds
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+_this_file = Path(__file__).resolve()
 
+DIR_PROJECT = _this_file.parent.resolve()
+
+DIR_SRC = DIR_PROJECT.parent.resolve()
+
+DIR_REPO = DIR_SRC.parent.resolve()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b!a)3wnv0_sm$u!rhc6e167l&eu$qg!2d-$m(wgv@2b_0q0g9h'
+SECRET_KEY = _ds.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = _ds.MODE_DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    _ds.HOST,
+]
 
 
 # Application definition
@@ -54,7 +65,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [DIR_PROJECT / "template"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
