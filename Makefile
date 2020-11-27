@@ -100,6 +100,7 @@ createdb:
 .PHONY: migrations
 migrations:
 	$(call log, generating migrations)
+	$(PYTHON) src/manage.py migrate
 
 
 .PHONY: migrate

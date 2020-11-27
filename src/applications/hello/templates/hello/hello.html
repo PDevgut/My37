@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+
+{% block main %}
+<div>
+<h2 id="greeting_display_id">Hello, {{name_header}}!</h2>
+<p id="address_display_id">You are at {{address_header}} now</p>
+
+<form method="post" action="/h/greet/">
+  <p>
+    <label for="name_id">Name:</label>
+    <input id="name_id" name="name" placeholder="What is your name?" type="text" value="{{name_value}}">
+  </p>
+  <p>
+    <label for="address_id">Address:</label>
+    <input id="address_id" name="address" placeholder="Where are you?" type="text" value="{{address_value}}">
+  </p>
+  <p>
+    <button id="submit_id">Send</button>
+  </p>
+  {% csrf_token %}
+</form>
+  <form method="post" action="/h/reset/">
+        <button id="reset_id">Reset</button>
+    {% csrf_token %}
+  </form>
+</div>
+{% endblock %}

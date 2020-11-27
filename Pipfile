@@ -18,6 +18,7 @@ dynaconf = { extras = ["yaml"], version = "*" }
 gunicorn = "*"
 psycopg2-binary = "*"
 django = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.9"
