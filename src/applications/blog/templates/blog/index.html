@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+
+{% block main %}
+  <h2 class="hello_center" id="name_font">Read blog, Bro!</h2>
+
+  <form method="post" action="/b/new/" class="form_blog">
+      {% csrf_token %}
+      <p><label>Title</label>
+        </p>
+      <p><input class="form_blog_input" name="title"></p>
+      <p><label>what do you think about it?</label></p>
+      <p><textarea class="form_blog_input" name="content"></textarea></p>
+      <button type="submit">Tell</button>
+  </form>
+
+
+  {% for post in object_list %}
+    <article class="post">
+        <a href="/">{{ post.title }}</a>
+      <section>{{ post.content }}</section>
+      <p>{{ post.created_at }}</p>
+      <p>{{ post.nr_likes }}</p>
+      <p>{{ post.nr_views }}</p>
+    </article>
+  {% endfor %}
+
+{% endblock %}

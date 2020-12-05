@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+
+import dj_database_url
 from dynaconf import settings as _ds
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'applications.landing.apps.LandingConfig',
+    "applications.blog.apps.BlogConfig",
     'applications.hello.apps.HelloConfig',
 ]
 
@@ -89,7 +92,7 @@ database_url = os.getenv("DATABASE_URL", _ds.DATABASE_URL)
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL)
+    'default': dj_database_url.parse(database_url)
 }
 
 

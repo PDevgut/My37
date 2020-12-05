@@ -2,26 +2,22 @@
 
 {% block main %}
 <div>
-<h2 id="greeting_display_id">Hello, {{name_header}}!</h2>
-<p id="address_display_id">You are at {{address_header}} now</p>
+  <div id="head_hello">
+<h2 class="hello_center" id="name_font">Hello, {{name}}!</h2>
+<p class="hello_center" id="address_font">You are at {{address}} now</p>
+    </div>
+<div class="form_hello">
+<form method="post" action="/h/">
+  {{ form.as_p }}
 
-<form method="post" action="/h/greet/">
-  <p>
-    <label for="name_id">Name:</label>
-    <input id="name_id" name="name" placeholder="What is your name?" type="text" value="{{name_value}}">
-  </p>
-  <p>
-    <label for="address_id">Address:</label>
-    <input id="address_id" name="address" placeholder="Where are you?" type="text" value="{{address_value}}">
-  </p>
-  <p>
-    <button id="submit_id">Send</button>
-  </p>
+    <button class="form_hello">Send</button>
+
   {% csrf_token %}
 </form>
   <form method="post" action="/h/reset/">
-        <button id="reset_id">Reset</button>
+        <button class="form_hello">Reset</button>
     {% csrf_token %}
   </form>
+  </div>
 </div>
 {% endblock %}

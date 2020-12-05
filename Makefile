@@ -100,10 +100,11 @@ createdb:
 .PHONY: migrations
 migrations:
 	$(call log, generating migrations)
-	$(PYTHON) src/manage.py migrate
+	$(PYTHON) src/manage.py makemigrations
 
 
 .PHONY: migrate
 migrate:
 	$(call log, applying migrations)
+	$(PYTHON) src/manage.py migrate
 

@@ -1,18 +1,21 @@
-div {  margin: 3%; border: 2px}
-h1 {text-align: center; color: #6f713b;}
+div {  margin: 3%; border: 2px  }
+
+body {   background-color: #fafafa;   }
+
+#bg {  max-width: 100%; }
+
+h1 {  text-align: center; color: #efefef;  }
+
 hr {border: 0; height: 1px; background: #000;
     background-image: -webkit-linear-gradient(left, #fff, #000, #fff);
     background-image: -moz-linear-gradient(left, #fff, #000, #fff);
     background-image: -ms-linear-gradient(left, #fff, #000, #fff);
     background-image: -o-linear-gradient(left, #fff, #000, #fff);}
-#bg {
-background-image: url('/bg.jpg/');
-height: 350px;
-}
+
 @import url('https://fonts.googleapis.com/css?family=Arimo');
 .top-menu {
   position: relative;
-  background: #e6e6e6;
+  background: #333333;
 }
 .menu-main {
   list-style: none;
@@ -42,7 +45,7 @@ height: 350px;
   letter-spacing: 2px;
   font-family: 'Arimo', sans-serif;
   font-weight: bold;
-  color: #af8b8b;
+  color: #efefef;
   transition: .3s linear;
 }
 .menu-main a:hover {background: rgba(0,0,0,.3);}
@@ -68,3 +71,101 @@ height: 350px;
 #body_div {
 margin: 0 auto;
 }
+
+.form_hello {
+    display: block;
+    margin: auto;
+    width: 30%;
+
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:4px 4px 10px rgb(51 51 51);
+  height:225px;
+}
+#head_hello {
+    display: block;
+    margin: auto;
+    width: 50%;
+    padding-bottom: 20px;
+}
+
+.hello_center {
+text-align: center;
+font-family: 'Pattaya', sans-serif;
+}
+#name_font {
+color: #401313;
+font-size: 60px;
+margin-bottom: 0px;
+}
+#address_font{
+font-size: 30px;
+color: #333;
+}
+
+.form_hello button {
+margin-top: 10px;
+height:30px;
+box-shadow:0px 0px 4px 0px rgb(134 127 127);
+width: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+  }
+ .form_hello input {
+ display: grid;
+ text-align: right;
+ margin-right: 20px;
+ height: 30px;
+ border-radius:5px;
+ border 0px;
+box-shadow:0px 0px 0px rgb(51 51 51);
+ }
+ .form_hello p{
+ display: grid;
+ }
+  .form_hello label{
+  font-family: 'Josefin Sans', sans-serif;
+ }
+
+.form_blog {
+    display: block;
+    margin: auto;
+    width: 70%;
+
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:4px 4px 10px rgb(51 51 51);
+  height: absolute;
+}
+.form_blog button {
+margin-top: 20px;
+margin: 0 auto;
+margin-bottom: 10px;
+height:30px;
+box-shadow:0px 0px 4px 0px rgb(134 127 127);
+width: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius:10px;
+  }
+ .form_blog_input {
+ display: grid;
+ margin-right: 20px;
+ height: 30px;
+ border-radius:5px;
+ border 0px;
+box-shadow:0px 0px 0px rgb(51 51 51);
+ }
+
+ .form_blog p{
+ display: grid;
+ }
+  .form_blog label{
+  font-family: 'Josefin Sans', sans-serif;
+ }

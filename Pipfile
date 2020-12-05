@@ -19,6 +19,8 @@ gunicorn = "*"
 psycopg2-binary = "*"
 django = "*"
 dj-database-url = "*"
+whitenoise = "*"
+delorean = "*"
 
 [requires]
 python_version = "3.9"

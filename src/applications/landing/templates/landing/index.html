@@ -1,10 +1,11 @@
 {% extends "_base.html" %}
+{% load static %}
 
 {% block main %}
 <div>
 
         <hr>
-        <p>This is a study project.</p>
-        <div id="bg"></div>
+        <p id="name_font" class="hello_center">This is a study project.</p>
+        <img id="bg" alt="kdpv" src="{% static 'images/bg.jpg' %}">
         </div>
 {% endblock %}

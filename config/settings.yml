@@ -15,6 +15,7 @@ default:
   DIRS_TEMPLATES:
     - src/applications/hello/templates/
     - src/applications/landing/templates/
+    - src/applications/blog/templates/
     - src/project/templates/
   MODE_DEBUG: true
   HOST: ""
