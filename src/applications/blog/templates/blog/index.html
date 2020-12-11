@@ -1,7 +1,7 @@
 {% extends "_base.html" %}
 
 {% block main %}
-  <h2 class="hello_center" id="name_font">Read blog, Bro!</h2>
+  <h2 class="hello_center" id="name_font">Read blog, {{name}} !</h2>
 
   <form method="post" action="/b/new/" class="form_blog">
       {% csrf_token %}
@@ -13,14 +13,18 @@
       <button type="submit">Tell</button>
   </form>
 
-
+<hr>
   {% for post in object_list %}
-    <article class="post">
-        <a href="/">{{ post.title }}</a>
-      <section>{{ post.content }}</section>
-      <p>{{ post.created_at }}</p>
-      <p>{{ post.nr_likes }}</p>
-      <p>{{ post.nr_views }}</p>
+    <article class="blog_box">
+        <a href="/b/{{post.id}}">{{ post.title }}</a>
+        <hr>
+      <section>{{ post.content | truncatewords:30  }}</section>
+        <hr>
+      <p>{{ post.created_at }}  likes= {{ post.nr_likes }}  views= {{ post.nr_views }}</p>
+        <form method="post" action="/b/{{post.pk}}/delete/">
+            <button type="submit">Delete</button>
+        </form>
+
     </article>
   {% endfor %}
 

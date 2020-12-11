@@ -1,19 +1,17 @@
 {% extends "_base.html" %}
 
 {% block main %}
-  <h1>Create new post</h1>
+  <h1>Update post</h1>
 
-  <form method="post" action="/b/new/" class="post-form">
-    {{ form.as_p }}
-    {% csrf_token %}
-    <button type="submit">Tell</button>
-    {#    <div class="post-form-controls">#}
-    {#      <label for="id_content">What's up?</label>#}
-    {#      {% csrf_token %}#}
-    {#      <button type="submit">Tell</button>#}
-    {#    </div>#}
-    {#    <div class="post-form-fields">#}
-    {#      <textarea id="id_content" name="content"></textarea>#}
-    {#    </div>#}
-  </form>
+    <h1>Edit post</h1>
+    <form action="" method="post">
+      <p><label>Title</label>
+        </p>
+      <p><input class="form_blog_input" name="title"></p>
+      <p><label>what do you think about it?</label></p>
+      <p><textarea class="form_blog_input" name="content"></textarea></p>
+      <button type="submit">Update</button>
+</form>
+
+
 {% endblock %}
